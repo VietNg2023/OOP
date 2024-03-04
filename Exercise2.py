@@ -2,7 +2,7 @@
 #Author: Viet Nguyen
 #Date: 16 Jan 2024
 #Description: Coin object and tossing
-#T ask 2
+#Task 2
 # import random
 # #Class definition
 # class Coin:
