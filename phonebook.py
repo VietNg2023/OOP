@@ -1,12 +1,6 @@
 class PhoneBook:
     def __init__(self):
         self.__persons = {}
-        self.__filehandler = FileHandler("phonebook.txt")
-
-        # add the names and numbers from the file to the phone book
-        for name, numbers in self.__filehandler.load_file().items():
-            for number in numbers:
-                self.__phonebook.add_number(name, number)
 
     def add_number(self, name: str, number: str):
         if not name in self.__persons:
@@ -18,17 +12,20 @@ class PhoneBook:
     def get_numbers(self, name: str):
         if not name in self.__persons:
             return None
-
         return self.__persons[name]
     
      # return all entries (in dictionary format)
     def all_entries(self):
         return self.__persons
-
 class PhoneBookApplication:
     def __init__(self):
         self.__phonebook = PhoneBook()
         self.__filehandler = FileHandler("phonebook.txt")
+
+        # add the names and numbers from the file to the phone book
+        for name, numbers in self.__filehandler.load_file().items():
+            for number in numbers:
+                self.__phonebook.add_number(name, number)
 
     def help(self):
         print("commands: ")
